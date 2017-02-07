@@ -1,0 +1,10 @@
+K:\clase\Grado superior\2H\Acceso a Datos\Segunda Evaluacion\Ejercicios2\CapaNegocio\bin\Debug\CapaNegocio.dll
+K:\clase\Grado superior\2H\Acceso a Datos\Segunda Evaluacion\Ejercicios2\CapaNegocio\bin\Debug\CapaNegocio.pdb
+K:\clase\Grado superior\2H\Acceso a Datos\Segunda Evaluacion\Ejercicios2\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
+K:\clase\Grado superior\2H\Acceso a Datos\Segunda Evaluacion\Ejercicios2\CapaNegocio\obj\Debug\CapaNegocio.dll
+K:\clase\Grado superior\2H\Acceso a Datos\Segunda Evaluacion\Ejercicios2\CapaNegocio\obj\Debug\CapaNegocio.pdb
+K:\clase\Grado superior\2H\Acceso a Datos\Ejercicios2\CapaNegocio\bin\Debug\CapaNegocio.dll
+K:\clase\Grado superior\2H\Acceso a Datos\Ejercicios2\CapaNegocio\bin\Debug\CapaNegocio.pdb
+K:\clase\Grado superior\2H\Acceso a Datos\Ejercicios2\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
+K:\clase\Grado superior\2H\Acceso a Datos\Ejercicios2\CapaNegocio\obj\Debug\CapaNegocio.dll
+K:\clase\Grado superior\2H\Acceso a Datos\Ejercicios2\CapaNegocio\obj\Debug\CapaNegocio.pdb

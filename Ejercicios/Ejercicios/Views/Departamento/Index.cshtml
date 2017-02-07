@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Ejercicios.Models.Departamento>
+@using Ejercicios.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<ul>
+    @foreach(Departamento departamento in Model)
+    {
+        <li>
+            @Html.ActionLink(departamento.NomDepartamento, "Index2", "Empleado", new { depId = departamento.DepartamentoId }, null)
+        </li>
+    }
+</ul>

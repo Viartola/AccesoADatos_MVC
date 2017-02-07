@@ -1,0 +1,44 @@
+﻿@model Ejercicios.Models.Empleado
+
+@{
+    ViewBag.Title = "Details2";
+}
+
+<h2>Details2</h2>
+
+<table style="font-family:Arial">
+    <tr>
+        <td>
+            <b>Empleado Id:</b>
+        </td>
+        <td>
+            @Model.EmpleadoId
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Nombre:</b>
+        </td>
+        <td>
+            @Model.Nombre
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Genero:</b>
+        </td>
+        <td>
+            @Model.Genero
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Ciudad:</b>
+        </td>
+        <td>
+            @Model.Ciudad
+        </td>
+    </tr>
+</table>
+<br />
+@Html.ActionLink("Volver a la Lista", "Index")

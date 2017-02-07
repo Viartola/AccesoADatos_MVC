@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Ejercicios.Models.Empleado>
+@using Ejercicios.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<ul>
+    @foreach (Empleado empleado in Model)
+    {
+        <li>
+            <!--<a href="/Details2/empleado.EmpleadoId">empleado.Nombre</a> falta añadir arroba delante de empleado-->
+            @Html.ActionLink(empleado.Nombre, "Details2", new {id = empleado.EmpleadoId})
+        </li>
+    }
+</ul>

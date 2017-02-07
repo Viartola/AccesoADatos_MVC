@@ -1,0 +1,79 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<Ejercicio3.Models.Empleado>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index 2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @using (Html.BeginForm("Index2", "Empleado", FormMethod.Get))
+    {
+        <b>Buscar por: </b>@Html.RadioButton("buscarPor", "Nombre")<text>Nombre &nbsp;&nbsp;</text>
+        @Html.RadioButton("buscarPor", "Genero") <text>Género</text> <br />
+        @Html.TextBox("buscar") <input type="submit" value="Buscar" />
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Nombre", "Index2", new { ordenadoPor = ViewBag.OrdenNombre, buscarPor = Request.QueryString["buscarPor"], buscar = Request.QueryString["buscar"] })
+        </th>
+        <th>
+            @Html.ActionLink("Genero", "Index2", new { ordenadoPor = ViewBag.OrdenGenero, buscarPor = Request.QueryString["buscarPor"], buscar = Request.QueryString["buscar"] })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Ciudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DepartamentoId)
+        </th>
+    </tr>
+
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="6" style="color:red">No existen coincidencias</td>
+        </tr>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ciudad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartamentoId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmpleadoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.EmpleadoId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpleadoId })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+@Html.PagedListPager(Model, pagina => Url.Action("Index2", new { pagina, buscarPor = Request.QueryString["buscarPor"], buscar = Request.QueryString["buscar"], ordenadoPor = Request.QueryString["ordenadoPor"] }),
+    new PagedListRenderOptions()
+    {
+        Display = PagedListDisplayMode.IfNeeded,
+        DisplayPageCountAndCurrentLocation = true,
+        DisplayItemSliceAndTotal = true
+    })
