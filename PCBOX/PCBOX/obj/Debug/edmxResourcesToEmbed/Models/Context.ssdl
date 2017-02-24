@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PCBOXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="CategoriaId" />
+    </Key>
+    <Property Name="CategoriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomCategoria" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="marcaId" />
+    </Key>
+    <Property Name="marcaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomMarca" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icono" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="ProductoId" />
+    </Key>
+    <Property Name="ProductoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubcategoriaId" Type="int" />
+    <Property Name="MarcaId" Type="int" />
+    <Property Name="nomProducto" Type="nvarchar" MaxLength="50" />
+    <Property Name="Foto" Type="nvarchar" MaxLength="50" />
+    <Property Name="Precio" Type="real" />
+  </EntityType>
+  <EntityType Name="Subcategoria">
+    <Key>
+      <PropertyRef Name="SubcategoriaId" />
+    </Key>
+    <Property Name="SubcategoriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoriaId" Type="int" />
+    <Property Name="nomSubcategoria" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="PCBOXModelStoreContainer">
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subcategoria" EntityType="Self.Subcategoria" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

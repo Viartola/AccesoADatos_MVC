@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PCBOXModelStoreContainer" CdmEntityContainer="PCBOXEntities">
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="PCBOXModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+          <ScalarProperty Name="nomCategoria" ColumnName="nomCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marca">
+      <EntityTypeMapping TypeName="PCBOXModel.Marca">
+        <MappingFragment StoreEntitySet="Marca">
+          <ScalarProperty Name="marcaId" ColumnName="marcaId" />
+          <ScalarProperty Name="nomMarca" ColumnName="nomMarca" />
+          <ScalarProperty Name="Icono" ColumnName="Icono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="PCBOXModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="SubcategoriaId" ColumnName="SubcategoriaId" />
+          <ScalarProperty Name="MarcaId" ColumnName="MarcaId" />
+          <ScalarProperty Name="nomProducto" ColumnName="nomProducto" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subcategoria">
+      <EntityTypeMapping TypeName="PCBOXModel.Subcategoria">
+        <MappingFragment StoreEntitySet="Subcategoria">
+          <ScalarProperty Name="SubcategoriaId" ColumnName="SubcategoriaId" />
+          <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+          <ScalarProperty Name="nomSubcategoria" ColumnName="nomSubcategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

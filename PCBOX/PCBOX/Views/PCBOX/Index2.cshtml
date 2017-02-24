@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PCBOX.Models.Producto>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+
+@Html.DropDownList("Categorias", "Selecciona Categorías")
+@Html.DropDownList("Subcategorias", "Selecciona Subcategorias")
+@Html.DropDownList("Marcas", "Selecciona Marca")
+<p>
+    @using (Html.BeginForm("Index2", "PCBOX", FormMethod.Post))
+    {
+        @Html.DropDownList("Productos", "Selecciona Producto")
+        <input type="submit" value="Buscar" />
+    }
+</p>
+@foreach (var item in Model)
+{
+    <table border="1" cellpadding="5px">
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubcategoriaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarcaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomProducto)
+            </td>
+            <td>
+                <img src="../Images/@item.Foto" width="50px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)€
+            </td>
+        </tr>
+    </table>
+
+}

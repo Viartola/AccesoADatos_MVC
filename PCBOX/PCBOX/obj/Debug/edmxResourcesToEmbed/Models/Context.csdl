@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PCBOXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="CategoriaId" />
+    </Key>
+    <Property Name="CategoriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="marcaId" />
+    </Key>
+    <Property Name="marcaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomMarca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Icono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="ProductoId" />
+    </Key>
+    <Property Name="ProductoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubcategoriaId" Type="Int32" />
+    <Property Name="MarcaId" Type="Int32" />
+    <Property Name="nomProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Precio" Type="Single" />
+  </EntityType>
+  <EntityType Name="Subcategoria">
+    <Key>
+      <PropertyRef Name="SubcategoriaId" />
+    </Key>
+    <Property Name="SubcategoriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoriaId" Type="Int32" />
+    <Property Name="nomSubcategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="PCBOXEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Subcategoria" EntityType="Self.Subcategoria" />
+  </EntityContainer>
+</Schema>

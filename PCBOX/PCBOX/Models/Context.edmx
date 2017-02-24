@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PCBOXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="CategoriaId" />
+          </Key>
+          <Property Name="CategoriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomCategoria" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="marcaId" />
+          </Key>
+          <Property Name="marcaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomMarca" Type="nvarchar" MaxLength="50" />
+          <Property Name="Icono" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="ProductoId" />
+          </Key>
+          <Property Name="ProductoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubcategoriaId" Type="int" />
+          <Property Name="MarcaId" Type="int" />
+          <Property Name="nomProducto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Foto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Precio" Type="real" />
+        </EntityType>
+        <EntityType Name="Subcategoria">
+          <Key>
+            <PropertyRef Name="SubcategoriaId" />
+          </Key>
+          <Property Name="SubcategoriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoriaId" Type="int" />
+          <Property Name="nomSubcategoria" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="PCBOXModelStoreContainer">
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subcategoria" EntityType="Self.Subcategoria" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PCBOXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="CategoriaId" />
+          </Key>
+          <Property Name="CategoriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="marcaId" />
+          </Key>
+          <Property Name="marcaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomMarca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Icono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="ProductoId" />
+          </Key>
+          <Property Name="ProductoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubcategoriaId" Type="Int32" />
+          <Property Name="MarcaId" Type="Int32" />
+          <Property Name="nomProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Precio" Type="Single" />
+        </EntityType>
+        <EntityType Name="Subcategoria">
+          <Key>
+            <PropertyRef Name="SubcategoriaId" />
+          </Key>
+          <Property Name="SubcategoriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoriaId" Type="Int32" />
+          <Property Name="nomSubcategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PCBOXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="Subcategoria" EntityType="Self.Subcategoria" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PCBOXModelStoreContainer" CdmEntityContainer="PCBOXEntities">
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="PCBOXModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+                <ScalarProperty Name="nomCategoria" ColumnName="nomCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marca">
+            <EntityTypeMapping TypeName="PCBOXModel.Marca">
+              <MappingFragment StoreEntitySet="Marca">
+                <ScalarProperty Name="marcaId" ColumnName="marcaId" />
+                <ScalarProperty Name="nomMarca" ColumnName="nomMarca" />
+                <ScalarProperty Name="Icono" ColumnName="Icono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="PCBOXModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+                <ScalarProperty Name="SubcategoriaId" ColumnName="SubcategoriaId" />
+                <ScalarProperty Name="MarcaId" ColumnName="MarcaId" />
+                <ScalarProperty Name="nomProducto" ColumnName="nomProducto" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subcategoria">
+            <EntityTypeMapping TypeName="PCBOXModel.Subcategoria">
+              <MappingFragment StoreEntitySet="Subcategoria">
+                <ScalarProperty Name="SubcategoriaId" ColumnName="SubcategoriaId" />
+                <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+                <ScalarProperty Name="nomSubcategoria" ColumnName="nomSubcategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
