@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Ejercicio4.Models.Empleado>
+
+<br />
+@using (Html.BeginForm("Borrar", "Empleado", FormMethod.Post))
+{
+    <table style="width:500px">
+        <thead>
+            <tr>
+                <th>Seleccion</th>
+                <th>Nombre</th>
+                <th>Genero</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.EditorForModel()
+        </tbody>
+    </table>
+    <br />
+    <input type="submit" value="Borrar Empleados Seleccionados" />
+}

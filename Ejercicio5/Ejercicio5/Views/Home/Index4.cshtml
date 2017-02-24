@@ -1,0 +1,14 @@
+﻿@model Ejercicio5.Models.DepartamentoViewModel
+
+@{
+    ViewBag.Title = "Index4";
+}
+
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ListBoxFor(x => x.apartamentos, Model.apartamentos)
+    <br />
+    <input type="submit" value="Enviar" />
+}

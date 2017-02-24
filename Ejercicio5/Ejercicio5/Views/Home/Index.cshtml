@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+
+@Html.DropDownList("Departamentos" ,  new List<SelectListItem> { 
+        new SelectListItem { Text = "Informatica", Value = "1", Selected = true },
+        new SelectListItem { Text = "Mecanica", Value = "2" },
+        new SelectListItem { Text = "Telecomunicaciones", Value = "3" },
+        new SelectListItem { Text = "Mecanizado", Value = "4" }
+    },"Elige un departamento")

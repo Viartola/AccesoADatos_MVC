@@ -1,0 +1,17 @@
+﻿@model Ejercicio5.Models.Compania
+
+@{
+    ViewBag.Title = "Index3";
+}
+
+<br />
+
+@using (Html.BeginForm())
+{
+    foreach (var departamento in Model.departamentos)
+    {
+        @Html.RadioButtonFor(m => m.deptSeleccionado, departamento.DepartamentoId) @departamento.NomDepartamento <br />
+    }
+    <br />
+    <input type="submit" value="Enviar" />
+}
